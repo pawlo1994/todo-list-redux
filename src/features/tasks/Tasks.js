@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Form from './Form';
 import TaskList from './TaskList';
 import Buttons from './Buttons';
@@ -10,14 +9,9 @@ import { theme } from '../../common/theme.js';
 import { ThemeProvider } from 'styled-components';
 
 function Tasks() {
-  const [hideDone, setHideDone] = useState(false);
-
-  const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone);
-  };
 
   const {
-    tasks,
+    // tasks,
     removeTask,
     toggleTaskDone,
     setAllDone,
@@ -37,17 +31,12 @@ function Tasks() {
         <Section title="Lista zadań"
           body={
             <TaskList
-              tasks={tasks}
-              hideDone={hideDone}
               removeTask={removeTask}
               toggleTaskDone={toggleTaskDone}
             />
           }
           extraHeaderContent={
             <Buttons
-              tasks={tasks}
-              hideDone={hideDone}
-              toggleHideDone={toggleHideDone}
               setAllDone={setAllDone}
             />
           }
