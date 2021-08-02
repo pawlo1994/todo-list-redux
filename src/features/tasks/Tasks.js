@@ -6,8 +6,12 @@ import Header from "../../common/Header";
 import Container from "../../common/Container";
 import { theme } from '../../common/theme.js';
 import { ThemeProvider } from 'styled-components';
+import { StyledButtonsButton } from './Buttons/styled';
+import { useDispatch } from 'react-redux';
+import { fetchExampleTasks } from './tasksSlice';
 
 function Tasks() {
+  const dispatch = useDispatch();
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -15,6 +19,12 @@ function Tasks() {
         <Section
           title="Dodaj nowe zadanie"
           body={<Form />}
+          extraHeaderContent={
+            <StyledButtonsButton
+              onClick={() => dispatch(fetchExampleTasks())}
+            >
+              Pobierz przykładowe zadania
+            </StyledButtonsButton>}
         />
         <Section title="Lista zadań"
           body={<TaskList />}
