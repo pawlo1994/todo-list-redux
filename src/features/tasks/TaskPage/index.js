@@ -20,9 +20,13 @@ function TaskPage() {
                 <Section
                     title={task ? task.content : "Nie znaleziono zadania"}
                     body={
-                        <StyledParagraph>
-                            <strong>Ukończono:</strong> {task.done ? "Tak 😁" : "Nie 😪"}
-                        </StyledParagraph>
+                        task ?
+                            <StyledParagraph>
+                                <strong>Ukończono:</strong> {task.done ? "Tak 😁" : "Nie 😪"}
+                            </StyledParagraph> :
+                            <StyledParagraph>
+                                🤔
+                            </StyledParagraph>
                     }
                 />
             </Container>
