@@ -5,4 +5,9 @@ export const Wrapper = styled.div`
     padding-right: 0;
     display: grid;
     grid-template-columns: 1fr;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint}px)
+    {
+        padding-right: 20px;
+    }
 `;
