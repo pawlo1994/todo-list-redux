@@ -18,7 +18,7 @@ function AuthorPage() {
                             <StyledParagraph>Nazywam się <strong>Paweł Suchy</strong>, mam 26 lat, mieszkam w
                                 Międzyrzeczu
                                 Dolnym koło Bielska-Białej.</StyledParagraph>
-                            <StyledParagraph>Ukończyłem technikum infromatyczne w Zespole Szkół "Silesia" w
+                            <StyledParagraph>Ukończyłem technikum informatyczne w Zespole Szkół "Silesia" w
                                 Czechowicach-Dziedzicach jednak póki co nie pracuję w zawodzie.</StyledParagraph>
                             <StyledParagraph>Aktualnie pracuję na produkcji w branży Automotive jednak bardzo mocno
                                 wierzę w to,
