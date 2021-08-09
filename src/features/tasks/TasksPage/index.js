@@ -7,13 +7,14 @@ import Container from "../../../common/Container";
 import { Search } from './Search';
 import { theme } from '../../../common/theme.js';
 import { ThemeProvider } from 'styled-components';
-import { useDispatch } from 'react-redux';
-import { fetchExampleTasks } from '../tasksSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchExampleTasks, selectLoading, toggleLoading } from '../tasksSlice';
 import { TaskCommonButton } from '../TaskCommonButton';
 
 function TasksPage() {
 
   const dispatch = useDispatch();
+  const loading = useSelector(selectLoading);
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -23,9 +24,15 @@ function TasksPage() {
           body={<Form />}
           extraHeaderContent={
             <TaskCommonButton
-              onClick={() => dispatch(fetchExampleTasks())}
+              disabled={loading}
+              onClick={
+                () => {
+                  dispatch(toggleLoading());
+                  dispatch(fetchExampleTasks());
+                }
+              }
             >
-              Pobierz przykładowe zadania
+              {!loading ? "Pobierz przykładowe zadania" : "Ładowanie..."}
             </TaskCommonButton>}
         />
         <Section
