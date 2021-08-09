@@ -7,9 +7,9 @@ import Container from "../../../common/Container";
 import { Search } from './Search';
 import { theme } from '../../../common/theme.js';
 import { ThemeProvider } from 'styled-components';
-import { StyledButtonsButton } from './Buttons/styled';
 import { useDispatch } from 'react-redux';
 import { fetchExampleTasks } from '../tasksSlice';
+import { TaskCommonButton } from '../TaskCommonButton';
 
 function TasksPage() {
 
@@ -22,11 +22,11 @@ function TasksPage() {
           title="Dodaj nowe zadanie"
           body={<Form />}
           extraHeaderContent={
-            <StyledButtonsButton
+            <TaskCommonButton
               onClick={() => dispatch(fetchExampleTasks())}
             >
               Pobierz przykładowe zadania
-            </StyledButtonsButton>}
+            </TaskCommonButton>}
         />
         <Section
           title="Wyszukiwarka"

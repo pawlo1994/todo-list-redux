@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
-import { StyledButtons, StyledButtonsButton } from "./styled";
+import { StyledButtons } from "./styled";
 import { selectTasks, selectHideDone, toggleHideDone, setAllDone } from "../../tasksSlice";
+import { TaskCommonButton } from "../../TaskCommonButton";
 
 const Buttons = () => {
     const tasks = useSelector(selectTasks);
@@ -10,17 +11,17 @@ const Buttons = () => {
         <>
             {tasks.length > 0 && (
                 <StyledButtons>
-                    <StyledButtonsButton
+                    <TaskCommonButton
                         onClick={() => dispatch(toggleHideDone())}
                     >
                         {hideDone ? "Pokaż" : "Ukryj"} ukończone
-                    </StyledButtonsButton>
-                    <StyledButtonsButton
+                    </TaskCommonButton>
+                    <TaskCommonButton
                         disabled={tasks.every(({ done }) => done)}
                         onClick={() => dispatch(setAllDone())}
                     >
                         Ukończ wszystkie
-                    </StyledButtonsButton>
+                    </TaskCommonButton>
                 </StyledButtons>)}
         </>)
 };
