@@ -5,13 +5,13 @@ import { theme } from '../../../common/theme.js';
 import { ThemeProvider } from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getTaskById } from '../tasksSlice';
+import { selectTaskById } from '../tasksSlice';
 import { StyledParagraph } from '../../../common/StyledParagraph';
 
 function TaskPage() {
 
     const { id } = useParams();
-    const task = useSelector(state => getTaskById(state, id));
+    const task = useSelector(state => selectTaskById(state, id));
 
     return (
         <ThemeProvider theme={theme}>
