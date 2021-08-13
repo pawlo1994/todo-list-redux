@@ -1,8 +1,6 @@
 import Section from '../../../common/Section';
 import Header from "../../../common/Header";
 import Container from "../../../common/Container";
-import { theme } from '../../../common/theme.js';
-import { ThemeProvider } from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectTaskById } from '../tasksSlice';
@@ -14,23 +12,21 @@ function TaskPage() {
     const task = useSelector(state => selectTaskById(state, id));
 
     return (
-        <ThemeProvider theme={theme}>
-            <Container>
-                <Header title="Szczegóły zadania" />
-                <Section
-                    title={task ? task.content : "Nie znaleziono zadania"}
-                    body={
-                        task ?
-                            <StyledParagraph>
-                                <strong>Ukończono:</strong> {task.done ? "Tak 😁" : "Nie 😪"}
-                            </StyledParagraph> :
-                            <StyledParagraph>
-                                🤔
-                            </StyledParagraph>
-                    }
-                />
-            </Container>
-        </ThemeProvider>
+        <Container>
+            <Header title="Szczegóły zadania" />
+            <Section
+                title={task ? task.content : "Nie znaleziono zadania"}
+                body={
+                    task ?
+                        <StyledParagraph>
+                            <strong>Ukończono:</strong> {task.done ? "Tak 😁" : "Nie 😪"}
+                        </StyledParagraph> :
+                        <StyledParagraph>
+                            🤔
+                        </StyledParagraph>
+                }
+            />
+        </Container>
     );
 }
 
