@@ -15,6 +15,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 4. React.js
 5. React-Redux
 6. Create-react-app
+7. React Router
+8. Redux-saga
 
 ## How to use
 1. Type your task content in field which is in "Dodaj nowe zadanie" section.
@@ -30,6 +32,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 6. If you want to hide done tasks, click on "ukryj ukończone". If you want to show them again, click on "pokaż ukończone".
 ![toggle done tasks gif](images/toggleDoneTasks.gif)
 Now your to-do list saves automaticaly after every update.
+
+## Additional Features
+Now this app contains navigation at the top.
+1. "Zadania" shows three sections:
+    - "Dodaj nowe zadanie" where you can add new task
+    - "Wyszukiwarka" where you can search specified task
+    - "Lista zadań" which shows your to-do list
+![zadania gif](images/zadania.gif)
+2. "O autorze" shows informations about author of this app.
+![o autorze gif](images/oAutorze.gif)
+
+You can get example tasks from server. If you want to do this, just click on "Pobierz przykładowe zadania" button.
+![get example tasks gif](images/getExampleTasks.gif)
+
+You can search specified task in "Wyszukiwarka" section as I wrote higher.
+![search task gif](images/searchTask.gif)
+
+You can also read task details. Just click on its content to show them.
+![show task info gif](images/showTaskInfo.gif)
 ## Available Scripts
 
 In the project directory, you can run:
