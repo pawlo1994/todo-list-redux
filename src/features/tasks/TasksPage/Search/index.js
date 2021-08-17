@@ -22,5 +22,5 @@ export const Search = () => {
                 onChange={onInputChange}
             />
         </Wrapper>
-    )
+    );
 };
