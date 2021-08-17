@@ -6,7 +6,7 @@ import Header from "../../../common/Header";
 import Container from "../../../common/Container";
 import { Search } from './Search';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchExampleTasks, selectLoading, toggleLoading } from '../tasksSlice';
+import { fetchExampleTasks, selectLoading } from '../tasksSlice';
 import { TaskCommonButton } from '../TaskCommonButton';
 
 function TasksPage() {
@@ -24,7 +24,6 @@ function TasksPage() {
             disabled={loading}
             onClick={
               () => {
-                dispatch(toggleLoading());
                 dispatch(fetchExampleTasks());
               }
             }
