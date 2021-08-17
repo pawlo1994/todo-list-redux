@@ -7,10 +7,18 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
 }))`
     color: white;
     text-decoration: none;
-    padding: 0 20px;
+    padding: 5px 20px;
+
+&:hover{
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: #fff;
+};
+
 &.${activeClassName}{
     font-weight: bold;
-}
+};
+
 `;
 
 export const StyledNavigation = styled.nav`
